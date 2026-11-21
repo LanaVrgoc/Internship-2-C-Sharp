@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\git2-domaci\\git2-domaci.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\git2-domaci\\git2-domaci.csproj",
       "projectName": "git2-domaci",
-      "projectPath": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\git2-domaci\\git2-domaci.csproj",
+      "projectPath": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\git2-domaci\\git2-domaci.csproj",
       "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\git2-domaci\\obj\\",
+      "outputPath": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\git2-domaci\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",

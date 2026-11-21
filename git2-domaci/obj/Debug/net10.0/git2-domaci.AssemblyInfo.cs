@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("git2-domaci")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+378430858b84099902ee6bc4f603aa8ec3e2a211")]
 [assembly: System.Reflection.AssemblyProductAttribute("git2-domaci")]
 [assembly: System.Reflection.AssemblyTitleAttribute("git2-domaci")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

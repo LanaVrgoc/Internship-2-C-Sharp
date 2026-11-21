@@ -1,10 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\",
+  "WorkspaceRootPath": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC47F786-B29F-427F-B8F0-699260D634C8}|git2-domaci\\git2-domaci.csproj|c:\\users\\korisnik\\source\\repos\\git2-domaci\\git2-domaci\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC47F786-B29F-427F-B8F0-699260D634C8}|git2-domaci\\git2-domaci.csproj|solutionrelative:git2-domaci\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3097478A-4BD5-1179-CCB1-BB72C9A12231}|git2-domaci\\git2-domaci.csproj|c:\\users\\korisnik\\desktop\\git2-domaci\\git2-domaci\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3097478A-4BD5-1179-CCB1-BB72C9A12231}|git2-domaci\\git2-domaci.csproj|solutionrelative:git2-domaci\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Korisnik\\source\\repos\\1.zadatak\\1.zadatak\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Korisnik\\source\\repos\\dump predavanje\\dump predavanje\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,15 +26,64 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\git2-domaci\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\git2-domaci\\Program.cs",
               "RelativeDocumentMoniker": "git2-domaci\\Program.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\source\\repos\\git2-domaci\\git2-domaci\\Program.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Desktop\\git2-domaci\\git2-domaci\\Program.cs",
               "RelativeToolTip": "git2-domaci\\Program.cs",
-              "ViewState": "AgIAAA4BAAAAAAAAAAAwwBYBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAFoEAAAAAAAAAAAAAFoEAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-21T16:14:36.107Z",
               "EditorCaption": "",
               "OwnerCaption": "%2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "fac2d549-cad8-4b6b-91e0-d101801fb0e9",
+        "Display": 1,
+        "X": -605,
+        "Y": 1207,
+        "Width": 1539,
+        "Height": 756,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\source\\repos\\1.zadatak\\1.zadatak\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\source\\repos\\1.zadatak\\1.zadatak\\Program.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\source\\repos\\1.zadatak\\1.zadatak\\Program.cs",
+              "RelativeToolTip": "..\\..\\source\\repos\\1.zadatak\\1.zadatak\\Program.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAswJkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T16:25:07.601Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%3"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\source\\repos\\dump predavanje\\dump predavanje\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\source\\repos\\dump predavanje\\dump predavanje\\Program.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\source\\repos\\dump predavanje\\dump predavanje\\Program.cs",
+              "RelativeToolTip": "..\\..\\source\\repos\\dump predavanje\\dump predavanje\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-21T16:24:37.999Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%3"
             }
           ]
         }
