@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "git2-domaci/1.0.0": {
+        "runtime": {
+          "git2-domaci.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "git2-domaci/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

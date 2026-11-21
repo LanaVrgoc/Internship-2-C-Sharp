@@ -1,0 +1,16 @@
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.exe
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.deps.json
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.runtimeconfig.json
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.runtimeconfig.dev.json
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.dll
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\bin\Debug\net10.0\git2-domaci.pdb
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.AssemblyInfoInputs.cache
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.AssemblyInfo.cs
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.dll
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\refint\git2-domaci.dll
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.pdb
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-domaci.genruntimeconfig.cache
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\ref\git2-domaci.dll
+C:\Users\Korisnik\source\repos\git2-domaci\git2-domaci\obj\Debug\net10.0\git2-dom.42971AE1.Up2Date
