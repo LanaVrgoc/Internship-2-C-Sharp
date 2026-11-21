@@ -37,7 +37,6 @@ namespace Drugi_zadatak
 
             while (repeat)
             {
-                var anyKey = "";
                 Console.WriteLine("Molimo odaberite željeno:\n");
                 Console.WriteLine("1 - Članovi\n2 - Posudbe\n0 - Izlaz iz aplikacije\n");
                 choice = int.Parse(Console.ReadLine());
@@ -46,7 +45,6 @@ namespace Drugi_zadatak
                     case 0:
                         Console.WriteLine("Zbogom!\n\n");
                         repeat = false;
-                        anyKey = Console.ReadLine();
                         Console.Clear();
 
                         return 0;
@@ -55,7 +53,6 @@ namespace Drugi_zadatak
                         Console.Clear();
                         Console.WriteLine("ČLANOVI\n");
                         MenuMember(members, books);
-                        anyKey = Console.ReadLine();
                         Console.Clear();
 
                         break;
@@ -64,12 +61,10 @@ namespace Drugi_zadatak
                         Console.Clear();
                         Console.WriteLine("POSUDBE\n");
                         MenuBook(members, books);
-                        anyKey = Console.ReadLine();
                         break;
 
                     default:
                         Console.WriteLine("Krivi unos");
-                        anyKey = Console.ReadLine();
                         Console.Clear();
                         break;
                 }
@@ -84,7 +79,6 @@ namespace Drugi_zadatak
             Console.WriteLine("Odaberite:\n");
             Console.WriteLine("1 - Unos novog člana\n2 - Brisanje člana\n3 - Uređivanje člana\n4 - Pregled svih članova\n0 - Povratak na glavni izbornik\n");
 
-            var anyKey = "";
             int memChoice = int.Parse(Console.ReadLine());
             Console.Clear();
 
@@ -92,41 +86,53 @@ namespace Drugi_zadatak
             {
                 case 0:
                     Console.WriteLine("Vracanje...\n");
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 1:
                     Console.WriteLine("UNOS NOVOG ČLANA\n");
                     InputNewMember(members);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 2:
                     Console.WriteLine("BRISANJE ČLANA\n");
                     DeleteMember(members);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 3:
                     Console.WriteLine("UREĐIVANJE ČLANA\n");
-                    EditMember(members);
-                    anyKey = Console.ReadLine();
+                    EditMember(members, books);
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 4:
-                    Console.WriteLine("PREGLED SVIH ČLANOVA\n\n");
+                    Console.WriteLine("PREGLED SVIH ČLANOVA\n");
                     PrintMember(members, books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 default:
-                    Console.WriteLine("Krivi unos\n");
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("Krivi unos");
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
             }
@@ -149,10 +155,11 @@ namespace Drugi_zadatak
             int day = int.Parse(dates[0]);
             int month = int.Parse(dates[1]);
             int year = int.Parse(dates[2]);
-
+            
 
             DateTime dateOfBirth = new DateTime(year, month, day);
             members.Add(members.Count, (firstLast[0], firstLast[1], dateOfBirth, new List<int>() ));
+            Console.WriteLine($"Korisnik {firstLast[0]} {firstLast[1]}, rođen {dateOfBirth.ToString("dd/MM/yyyy")} je uspješno dodan!");
         }
 
         static void DeleteMember(Dictionary<int, (string firstName, string lastName, DateTime dateOfBirth, List<int> nums)> members)
@@ -216,7 +223,8 @@ namespace Drugi_zadatak
                     return false;
             }
         }
-        static void EditMember(Dictionary<int, (string firstName, string lastName, DateTime dateOfBirth, List<int> nums)> members)
+        static void EditMember(Dictionary<int, (string firstName, string lastName, DateTime dateOfBirth, List<int> nums)> members,
+            Dictionary<int, (string title, string author, DateTime loanDate, DateTime returnDate)> books)
         {
             Console.WriteLine("Unesite id člana kojeg želite promijeniti: ");
             int idEdit = int.Parse(Console.ReadLine());
@@ -225,13 +233,14 @@ namespace Drugi_zadatak
             {
                 if (member.Key == idEdit)
                 {
-                    ChooseEdit(members, idEdit);
+                    ChooseEdit(members, books, idEdit);
                 }
             }
 
         }
 
-        static void ChooseEdit(Dictionary<int, (string firstName, string lastName, DateTime dateOfBirth, List<int> nums)> members, int id)
+        static void ChooseEdit(Dictionary<int, (string firstName, string lastName, DateTime dateOfBirth, List<int> nums)> members,
+            Dictionary<int, (string title, string author, DateTime loanDate, DateTime returnDate)> books, int id)
         {
 
             Console.WriteLine($"Član {members[id].firstName} {members[id].lastName}\n");
@@ -256,7 +265,7 @@ namespace Drugi_zadatak
                     break;
 
                 case 2:
-                    Console.WriteLine("Trenutni datum: " + members[id].dateOfBirth + "\nUnesite novi datum (DD/MM/YYYY): ");
+                    Console.WriteLine("Trenutni datum: " + members[id].dateOfBirth.ToString("dd/MM/yyyy") + "\nUnesite novi datum (DD/MM/YYYY): ");
 
                     string date = Console.ReadLine();
 
@@ -275,7 +284,7 @@ namespace Drugi_zadatak
                     break;
 
                 case 3:
-                    Console.WriteLine("Under construction...\n");
+                    EditBook(books);
                     break;
 
                 default:
@@ -343,7 +352,6 @@ namespace Drugi_zadatak
             Console.WriteLine("1 - Unos nove posudbe\n2 - Vraćanje knjige\n3 - Brisanje posudbe\n4 - Uređivanje postojeće posudbe" +
                 "\n5 - Pregled svih posudbi\n6 - Izvještaji i analize\n0 - Povratak na glavni izbornik");
 
-            var anyKey = "";
             int memChoice = int.Parse(Console.ReadLine());
             Console.Clear();
 
@@ -351,14 +359,18 @@ namespace Drugi_zadatak
             {
                 case 0:
                     Console.WriteLine("Vracanje...\n");
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+
 
                     break;
 
                 case 1:
                     Console.WriteLine("UNOS NOVE POSUDBE\n");
                     FindMember(members, books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
@@ -367,41 +379,53 @@ namespace Drugi_zadatak
                     bool check = ReturnBook(books);
                     if(!check)
                         Console.WriteLine("Krivi upis");
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 3:
                     Console.WriteLine("BRISANJE POSUDBE\n");
                     EraseBook(members, books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 4:
                     Console.WriteLine("UREĐIVANJE POSTOJEĆE POSUDBE\n");
                     EditBook(books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 5:
                     Console.WriteLine("PREGLED SVIH POSUDBI\n");
                     PrintBooks(members, books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 case 6:
                     Console.WriteLine("IZVJEŠTAJI I ANALIZE\n");
                     Statistics(members, books);
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
 
                 default:
                     Console.WriteLine("Krivi unos\n");
-                    anyKey = Console.ReadLine();
+                    Console.WriteLine("\nPritisnite bilo koju tipku za nastavak...");
+                    Console.ReadKey();
+                    Console.Clear();
 
                     break;
             }
@@ -822,7 +846,8 @@ namespace Drugi_zadatak
                         if(dayLate == 0)
                             Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
                                 $"datum vraćanja {book.Value.returnDate}. Ne kasni");
-                        Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
+                        else
+                            Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
                                 $"datum vraćanja {book.Value.returnDate}. Zakasnina: {toPay}");
                     }
                     break;
@@ -847,7 +872,8 @@ namespace Drugi_zadatak
                             if (dayLate == 0)
                                 Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
                                     $"datum vraćanja {books[num].returnDate}. Ne kasni");
-                            Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
+                            else
+                                Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
                                     $"datum vraćanja {books[num].returnDate}. Zakasnina: {toPay}");
                         }
                     }    
@@ -862,7 +888,8 @@ namespace Drugi_zadatak
                             if (dayLate == 0)
                                 Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
                                     $"datum vraćanja {books[num].returnDate}. Ne kasni");
-                            Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
+                            else
+                                Console.WriteLine($"[{num}] - '{books[num].title}' {books[num].author}, datum posudbe {books[num].loanDate}, " +
                                     $"datum vraćanja {books[num].returnDate}. Zakasnina: {toPay}");
                         }
                     }
@@ -901,7 +928,8 @@ namespace Drugi_zadatak
                             if (dayLate == 0)
                                 Console.WriteLine($"[{num.Key}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
                                     $"datum vraćanja {books[num.Key].returnDate}. Ne kasni");
-                            Console.WriteLine($"[{num.Key}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
+                            else
+                                Console.WriteLine($"[{num.Key}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
                                     $"datum vraćanja {books[num.Key].returnDate}. Zakasnina: {toPay}");
                         }
                     }
@@ -915,7 +943,8 @@ namespace Drugi_zadatak
                             if (dayLate == 0)
                                 Console.WriteLine($"[{num}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
                                     $"datum vraćanja {books[num.Key].returnDate}. Ne kasni");
-                            Console.WriteLine($"[{num}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
+                            else
+                                Console.WriteLine($"[{num}] - '{books[num.Key].title}' {books[num.Key].author}, datum posudbe {books[num.Key].loanDate}, " +
                                     $"datum vraćanja {books[num.Key].returnDate}. Zakasnina: {toPay}");
                         }
                     }
@@ -977,7 +1006,8 @@ namespace Drugi_zadatak
                             if (dayLate == 0)
                                 Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
                                     $"datum vraćanja {book.Value.returnDate}. Ne kasni");
-                            Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
+                            else
+                                Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
                                     $"datum vraćanja {book.Value.returnDate}. Zakasnina: {toPay}");
                         }
                     }
@@ -1058,35 +1088,30 @@ namespace Drugi_zadatak
                 }
             }
             Console.WriteLine("Ukupno za platiti: " + sum);
-
-            int sumDays = 0;
-            int max = 0;
+            int returnedCount = 0, sumDays = 0, maxLate = 0;
             foreach (var book in books)
             {
-                if (foundMem.nums.Contains(book.Key))
+                if (!foundMem.nums.Contains(book.Key)) continue;
+                if (book.Value.returnDate.Year != 1)
                 {
-                    TimeSpan diff = book.Value.loanDate - book.Value.returnDate;
-                    sumDays += diff.Days;
-                    if(diff.Days > max)
-                        max = diff.Days;
+                    returnedCount++;
+                    sumDays += (book.Value.returnDate - book.Value.loanDate).Days;
                 }
+                int late = NmbDays(book.Value.loanDate, book.Value.returnDate);
+                if (late > maxLate) maxLate = late;
             }
-            double average = (double)sumDays - (double)(foundMem.nums.Count - sumNotReturned);
-            Console.WriteLine("Prosječno trajanje posudbe: " + average);
+
+            double average = returnedCount > 0 ? (double)sumDays / returnedCount : 0;
+            Console.WriteLine($"Prosječno trajanje posudbe: {average:0.00} dana");
 
             Console.WriteLine("Posudba/Posudbe s najvećim kašnjenjem: ");
-            foreach (var book in books)
-            {
-                if (foundMem.nums.Contains(book.Key))
-                {
-                    TimeSpan diff = book.Value.loanDate - book.Value.returnDate;
-                    sumDays += diff.Days;
-                    if (diff.Days == max)
-                        Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
-                                $"datum vraćanja {book.Value.returnDate}.");
-                }
-            }
-
+            if (maxLate == 0)
+                Console.WriteLine("Nijedna posudba ne kasni.");
+            else
+                foreach (var book in books)
+                    if (foundMem.nums.Contains(book.Key) && NmbDays(book.Value.loanDate, book.Value.returnDate) == maxLate)
+                        Console.WriteLine($"[{book.Key}] \"{book.Value.title}\" - {book.Value.author}, kašnjenje: {maxLate} dana");
+            
             Console.WriteLine("Od kojeg datuma (DD/MM//YYYY): ");
             string dateFrom = Console.ReadLine();
 
@@ -1107,13 +1132,13 @@ namespace Drugi_zadatak
 
             DateTime To = new DateTime(yearTo, monthTo, dayTo);
 
-            Console.WriteLine($"Posudba/Posudbe od datuma {From} do datuma {To}: ");
+            Console.WriteLine($"Posudba/Posudbe od datuma {From.ToString("yyyy-MM-dd")} do datuma {To.ToString("yyyy-MM-dd")}: ");
             foreach (var book in books)
             {
                 if (foundMem.nums.Contains(book.Key) && (book.Value.loanDate > From && book.Value.loanDate < To))
                 {
-                    Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate}, " +
-                                $"datum vraćanja {book.Value.returnDate}.");
+                    Console.WriteLine($"[{book.Key}] - '{book.Value.title}' {book.Value.author}, datum posudbe {book.Value.loanDate.ToString("yyyy-MM-dd")}, " +
+                                $"datum vraćanja {book.Value.returnDate.ToString("yyyy-MM-dd")}.");
                 }
             }
 
